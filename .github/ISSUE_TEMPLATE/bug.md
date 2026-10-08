@@ -33,11 +33,6 @@ type: Bug
 
 1.
 
-## Expected vs actual
-
-**Expected:**
-
-**Actual:**
 
 ## Work
 
