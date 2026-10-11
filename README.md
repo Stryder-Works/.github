@@ -4,7 +4,7 @@ Organization-wide community health defaults for Stryder-Works.
 
 ## ESLint reference config
 
-[eslint.config.mjs](eslint.config.mjs) combines the strictest recommended
+[eslint.config.ts](eslint.config.ts) combines the strictest recommended
 TypeScript presets with the shared organization rules:
 
 - `typescript-eslint` `strictTypeChecked`
@@ -37,14 +37,15 @@ Native Node.js ESM requires explicit file extensions for relative imports.
 
 ### Use in an app
 
-Copy `eslint.config.mjs` to the app root. Install the dependencies:
+Copy `eslint.config.ts` to the app root. Install the dependencies:
 
 ```sh
-pnpm add -D @stryder-works/coding-standards eslint @eslint/js typescript typescript-eslint @vitest/eslint-plugin eslint-plugin-react-hooks eslint-plugin-jsx-a11y
+pnpm add -D @stryder-works/coding-standards eslint @eslint/js typescript typescript-eslint @vitest/eslint-plugin eslint-plugin-react-hooks eslint-plugin-jsx-a11y jiti
 ```
 
 Use ESLint 9.22 or later for `defineConfig` support. Use Node.js 22.16 or
-later for `import.meta.dirname` support.
+later for `import.meta.dirname` support. Use `jiti` 2.2 or later to load
+the TypeScript config in Node.js.
 
 Include each TypeScript source file in an app `tsconfig.json`.
 The config uses the TypeScript project service for type-aware rules.
