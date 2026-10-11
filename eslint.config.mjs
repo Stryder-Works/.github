@@ -34,4 +34,21 @@ export default defineConfig(
     files: ["**/*.{jsx,tsx}"],
     extends: [...react],
   },
+  {
+    name: "stryder-works/extensionless-imports",
+    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              regex: "\\.(?:js|jsx|mjs|cjs|ts|tsx|mts|cts)(?:[?#].*)?$",
+              message: "Omit the JavaScript or TypeScript file extension from the import path.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 );

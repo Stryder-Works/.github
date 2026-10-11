@@ -17,6 +17,24 @@ The config preserves the organization ban on type assertions except
 `as const`. It also removes the shared unused-name exceptions for
 `_` prefixes.
 
+Static imports and re-exports must omit JavaScript and TypeScript file
+extensions. This includes type imports and side-effect imports.
+CSS, JSON, and image imports can keep their extensions.
+
+```ts
+import { load } from "./load";
+import type { Result } from "./types";
+import "./styles.css";
+```
+
+The rule rejects `.js`, `.jsx`, `.mjs`, `.cjs`, `.ts`, `.tsx`,
+`.mts`, and `.cts` suffixes, including suffixes before query strings
+or fragments. Dynamic `import()` and CommonJS `require()` are outside
+this rule.
+
+Use a module resolver that supports extensionless paths, such as a bundler.
+Native Node.js ESM requires explicit file extensions for relative imports.
+
 ### Use in an app
 
 Copy `eslint.config.mjs` to the app root. Install the dependencies:
