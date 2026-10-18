@@ -2,6 +2,8 @@
 
 Organization-wide community health defaults for Stryder-Works.
 
+See [LABELS.md](LABELS.md) for the team issue labels.
+
 ## ESLint reference config
 
 [eslint.config.ts](eslint.config.ts) combines the strictest recommended
