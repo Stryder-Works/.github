@@ -2,7 +2,6 @@
 
 This file defines the team issue labels.
 The team set has exactly 11 labels.
-Use only these labels for stage, status, and review.
 
 ## Stage labels
 
